@@ -1,0 +1,204 @@
+{
+  "requirements": [
+    {
+      "bonus": false,
+      "description": "1 - Testa o método construtor da classe Transação.",
+      "enabled": true,
+      "identifier": null,
+      "order": 1,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "2 - Testa o método Getter do atributo quantia.",
+      "enabled": true,
+      "identifier": null,
+      "order": 2,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "3 - Testa o método retornar resumo transação.",
+      "enabled": true,
+      "identifier": null,
+      "order": 3,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "4 - Testa o método instante está gerando o instante corretamente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 4,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "5 - Testa o construtor da classe conta.\n",
+      "enabled": true,
+      "identifier": null,
+      "order": 5,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "6 - Testa o método adicionar transação e retornar saldo da conta.",
+      "enabled": true,
+      "identifier": null,
+      "order": 6,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "7 - Testa o método retornar resumo está retornando uma string com os valores corretamente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 7,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "8 - Testa o método retornar extrato está imprimindo os valores corretamente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 8,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "9 - Testa o método Getter do atributo idConta está retornando.",
+      "enabled": true,
+      "identifier": null,
+      "order": 9,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "10 - Testa o método método Getter do atributo pessoaCliente está retornando.",
+      "enabled": true,
+      "identifier": null,
+      "order": 10,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "11 - Testa o construtor da classe Pessoa Cliente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 11,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "12 - Testa o método adicionar conta e o método retornar número de contas.",
+      "enabled": true,
+      "identifier": null,
+      "order": 12,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "13 - Testa o método retornar saldo de uma conta específica da pessoa cliente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 13,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "14 - Testa o método retornar id de uma conta específica da pessoa cliente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 14,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "15 - Testa o método retornar o extrato de uma conta específica da pessoa cliente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 15,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "16 - Testa o método adiciona transação de uma conta específica da pessoa cliente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 16,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "17 - Testa o método validar senha.",
+      "enabled": true,
+      "identifier": null,
+      "order": 17,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "18 - Testa o método retornar resumo contas.",
+      "enabled": true,
+      "identifier": null,
+      "order": 18,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "19 - Testa o método Getter do atributo cpf está retornando.",
+      "enabled": true,
+      "identifier": null,
+      "order": 19,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "20 - Testa o gerador de número único para nova conta.",
+      "enabled": true,
+      "identifier": null,
+      "order": 20,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "21 - Testa o método adicionar pessoa cliente retorna o objeto pessoa cliente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 21,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "22 - Testa o método login da pessoa cliente retorna o objeto pessoa cliente corretamente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 22,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "23 - Testa se o método transferir fundos está transferindo corretamente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 23,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "24 - Testa se o método sacar está funcionando corretamente.",
+      "enabled": true,
+      "identifier": null,
+      "order": 24,
+      "skill_ids": []
+    },
+    {
+      "bonus": false,
+      "description": "25 - Cobertura de teste deve ser maior que 90%.",
+      "enabled": true,
+      "identifier": null,
+      "order": 25,
+      "skill_ids": []
+    }
+  ]
+}
