@@ -34,7 +34,7 @@
     },
     {
       "bonus": false,
-      "description": "5 - Testa o construtor da classe conta.\n",
+      "description": "5 - Testa o construtor da classe conta.",
       "enabled": true,
       "identifier": null,
       "order": 5,
