@@ -22,7 +22,7 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 <details>
   <summary>👨‍💻 O que deverá ser desenvolvido</summary><br />
 
-O dia a dia de uma pessoa desenvolvedora é repleto de demandas e aqui não será diferente! Chegou a sua vez de desenvolver um sistema de caixa eletrônico! 💰😮 Mas calma...antes de começar veja todos os critérios que o sistema deve ter para permitir que a pessoa cliente possa: 
+O dia a dia de uma pessoa desenvolvedora é repleto de demandas e aqui não será diferente! Chegou a sua vez de desenvolver os testes para um sistema de caixa eletrônico! 💰😮 Mas calma...antes de começar veja todos os critérios que o sistema deve ter para permitir que a pessoa cliente possa: 
 
 - Logar no sistema;
 
@@ -30,13 +30,7 @@ O dia a dia de uma pessoa desenvolvedora é repleto de demandas e aqui não ser�
 
 - Ter acesso a todas as transações feitas.
 
-⚠️**Lembre-se:** ⚠️a empresa que você representa segue a prática Test Driven Development (TDD) para desenvolver os seus sistemas. Confira a imagem a abaixo para relembrar como funciona: 👇
-
-<img src="images/tdd_chart.png"  width="60%">
-
-Primeiro vamos desenvolver os testes e depois as classes desse sistema de caixa eletrônico, tudo bem ?
-
-Os testes estão descritos abaixo (note que você é livre para adicionar mais testes).
+Os testes estão descritos abaixo.
 
 </details>
 
@@ -46,8 +40,6 @@ Os testes estão descritos abaixo (note que você é livre para adicionar mais t
 Neste exercício, verificamos se você é capaz de:
 
 Utilizar conceitos de testes unitários para criar classes em Java.
-
-Aplicar Test Driven Development (TDD)
 
 </details>
 
@@ -179,9 +171,7 @@ Caso você tenha alguma dificuldade na implementação do método main, e da cri
 
 <img src="images/mapa_conceitual_geral.png"  width="50%">
 
-Os passos a seguir são para construir as classes essenciais para o nosso sistema de caixa eletrônico. Vamos juntos nesta jornada, criando, testando e aperfeiçoando a nossa criação.
-
-Lembre-se, nosso objetivo é um caixa eletrônico, eficiente e seguro, por isso cada etapa é crucial. Vamos nessa!
+A seguir descrevemos as classes essenciais para o nosso sistema de caixa eletrônico. Vamos juntos nesta jornada, testando e aperfeiçoando a nossa criação. Vamos nessa!
 
 <details>
     <summary>Classe Banco</summary>
@@ -201,8 +191,6 @@ Lembre-se, nosso objetivo é um caixa eletrônico, eficiente e seguro, por isso 
         - `depositar`: esse método é público, deve ter o retorno do tipo `void` (não retorna nenhum valor) e deve receber três atributos, que são `pessoaCliente`, do tipo da classe `PessoaCLiente` (representa a pessoa cliente logada); `paraConta`, do tipo inteiro (representa o índice no array `contas` da conta na qual será depositado o dinheiro); e por fim, `quantia`, que é do tipo `double` (representa o valor que será depositado).
         - `mostrarExtrato`: esse método também é público, deve ter o retorno do `void`, e deve receber dois atributos, que são pessoaCliente, do tipo da classe `PessoaCliente` (que representa a pessoa cliente dona da conta) e o `conta`, que é do tipo inteiro (representa o índice da conta que será mostrada o extrato no array `contas`).
 
-**Olha a dica:** 👀 no método `gerarNumeroNovaConta`, utilize o método `nextInt`, da classe `Random` do pacote `java.util`, para gerar os dígitos. Gere um dígito de cada vez e concatene em uma String. Ao final, verifique se algum objeto conta já criado tem esse mesmo número identificador. Caso tenha, realize o processo novamente até ser gerado um identificador único. E no método `transferirFundos` considere que uma pessoa cliente só pode transferir dinheiro entre as suas próprias contas, uma conta corrente e uma conta poupança.
-
 </details>
 
 <details>
@@ -217,7 +205,7 @@ Lembre-se, nosso objetivo é um caixa eletrônico, eficiente e seguro, por isso 
 
     - Métodos:
         - Construtor: esse método construtor deve receber como argumentos `tipoConta` do tipo String; `pessoaCliente` do tipo da classe `PessoaCliente`; e `banco` do tipo da classe `Banco`. Ele deve utilizar esses argumentos para inicializar os respectivos atributos e utilizar o método `gerarNumeroNovaConta` para gerar o número de identificador único para a conta.
-        - `adicionarTransacao`: esse método é público e de retorno do tipo `void`. Deve receber dois argumentos, que são `quantia` do tipo `double` e a `descricao` do tipo String. `quantia` indica o valor que envolve a transação e `descricao` indica que tipo de transação foi realizada (ex: Depósito recebido, Saque efetuado, etc.). Deve-se usar esses valores para instanciar um objeto da classe `Transacao`, passando a quantia e a descrição (ex: `Transacao novaTransacao = new Transacao(quantia, "Transferência recebida");`) e adicionando esse novo objeto no array `transacoes`.
+        - `adicionarTransacao`: esse método é público e de retorno do tipo `void`. Deve receber dois argumentos, que são `quantia` do tipo `double` e a `descricao` do tipo String. `quantia` indica o valor que envolve a transação e `descricao` indica que tipo de transação foi realizada (ex: depósito recebido, saque efetuado, etc.). Deve-se usar esses valores para instanciar um objeto da classe `Transacao`, passando a quantia e a descrição (ex: `Transacao novaTransacao = new Transacao(quantia, "Transferência recebida");`) e adicionando esse novo objeto no array `transacoes`.
         - `retornarSaldo`: esse método é público e retorna o tipo `double`. Ele usa o array `transacoes` para calcular o saldo da conta em questão. 
         - `retornarResumoConta`: é do tipo público e retorna um String com o resumo da conta, número de identificação único, saldo e tipo da conta (Poupança ou Corrente). Ele usa o método `retornarSaldo` para calcular o saldo da conta.
         - `retornarExtrato`: esse método é público e tem retorno do tipo `void`. Esse método imprime no console todas as transações (uma por linha) da conta. Em outras palavras, esse método percorre o array `transacoes` e para cada objeto desse array, chama o método `retornarResumoTransacao` da classe `Transacao`.
@@ -267,7 +255,6 @@ Lembre-se, nosso objetivo é um caixa eletrônico, eficiente e seguro, por isso 
         - `getQuantia`: método `Getter` do atributo `quantia`.
         - `retornarResumoTransacao`: esse método é público e retorna uma String que representa o resumo da transação, contendo as informações instante, quantia e descrição. Ele não recebe nenhum argumento.
         - `retornarInstante`: esse método é público e retorna um String que representa o instante em que esse método é invocado. Ele usa a classe `LocalDateTime` para recuperar o momento em que o método é invocado (`LocalDateTime.now()`) e a classe `DateTimeFormatter` para formatar para o padrão brasileiro (ex: 20/01/2022 10:24:30). Esse método é usado no método construtor para inicializar o atributo `instante`.
-
 </details>
 
 
@@ -276,264 +263,10 @@ Lembre-se, nosso objetivo é um caixa eletrônico, eficiente e seguro, por isso 
 
 ![MapaMental](images/mapa_mental_classes.png)
 
-Para ajudar, implemente agora a classe `CaixaEletronico`, que contém o método `main`. Dessa forma, você terá um ponto de partida. Agora siga o passo a passo abaixo: 👇
-
-1. Primeiro importe a classe `Scanner`, e então escreva o método `main`. Aqui você deve instanciar um objeto da classe `Banco` e usá-la para criar três pessoas clientes e duas contas para cada pessoa cliente.
-
-⚠**Atenção⚠:** Após a criação das pessoas clientes e suas respectivas contas bancárias, você vai entrar em um laço infinito que é o sistema do caixa eletrônico em si. A princípio ele mostra uma mensagem de boas-vindas e permite que a pessoa cliente possa entrar com seus dados para poder acessar sua conta.
-
-Se a pessoa cliente entrar com os dados incorretos, o fluxo do programa vai entrar na primeira condição (`if`) e reapresentará a mensagem de boas-vindas e os campos para que a pessoa cliente possa tentar novamente. Quando a pessoa cliente entra com os dados corretos,  o fluxo do sistema entra na segunda condição (`else`) e é apresentado um menu para manipulação das suas contas bancárias.
-
-2. Na segunda etapa você verá um resumo das contas bancárias da pessoa usuária e também um menu com cinco opções (quatro delas para manipular a sua conta bancária e a quinta para fazer o logout do sistema e voltar para a tela de boas-vindas com os campos para fazer o login).
-
-👀Observe que cada opção é uma condição `if`/`else`! Dentro delas fazemos os tratamentos de dados inseridos de forma errada, com mensagens que indiquem o que foi que a pessoa cliente errou. Já quando os dados são inseridos corretamente, chamamos os respectivos métodos do banco para realizar a operação relativa à opção selecionada.
-
-<details>
-    <summary>Possível implementação Classe CaixaEletronico </summary>
-
-⚠**Atenção⚠:** essa classe `CaixaEletronico` é a principal do nosso sistema, pois ela contém o método `main` e como podemos ver na implementação, ele é o responsável por toda a interação com a pessoa cliente.
-
-Em outras palavras, essa classe é a interface entre a pessoa cliente e nosso sistema do banco. Com ela e as informações descritas anteriormente sobre as classes e seus métodos, você conseguirá entregar essa demanda com sucesso! 🚀
-
-```java
-package com.trybe.caixaeletronico;
-
-import java.util.Scanner;
-
-public class CaixaEletronico {
-
-  public static void main(String[] args) {
-
-    Scanner sc = new Scanner(System.in);
-
-    Banco banco = new Banco();
-    
-    /* adiciona algumas pessoas clientes ao banco criando ja uma conta poupanca 
-     * e em seguida adiciona uma conta corrente para essas pessoas
-     */
-    
-    // pessoa cliente 1
-    PessoaCliente pessoaCliente1 = banco.adicionarPessoaCliente("Alexiania Pereira", "842.074.410-77", "1234"); 
-    banco.adicionarConta("Poupança", pessoaCliente1);
-    banco.adicionarConta("Corrente", pessoaCliente1);
-    
-    // pessoa cliente 2
-    PessoaCliente pessoaCliente2 = banco.adicionarPessoaCliente("Abadiania Silva", "848.725.510-87", "1234");
-    banco.adicionarConta("Poupança", pessoaCliente2);
-    banco.adicionarConta("Corrente", pessoaCliente2);
-
-    // pessoa cliente 3
-    PessoaCliente pessoaCliente3 = banco.adicionarPessoaCliente("Camaragibe Oliveira", "433.892.200-11", "1234");
-    banco.adicionarConta("Poupança", pessoaCliente3);
-    banco.adicionarConta("Corrente", pessoaCliente3);
-    // laco infinito
-    while (true) {
-      
-      System.out.println("\n\nBem-vindo ao Banco da Trybe\n\n");
-      System.out.print("Entre com seu CPF: ");
-      String pessoaClienteCpf = sc.nextLine();
-      System.out.print("Entre com sua senha: ");
-      String senha = sc.nextLine();
-
-      PessoaCliente pessoaClienteAutenticada = banco.pessoaClienteLogin(pessoaClienteCpf, senha);
-      
-      if (pessoaClienteAutenticada == null) {
-        System.out.println("Combinação de CPF e senha incorretos. Tente novamente");
-
-      } else {
-
-        int op;
-
-        // menu para manipulacao das contas da pessoa cliente
-        do {
-          
-          // mostra o resumo das contas da pessoa cliente
-          pessoaClienteAutenticada.retornarResumoContas();
-
-          System.out.println("O que você gostaria de fazer?");
-          System.out.println("  1) Mostrar Extrato");
-          System.out.println("  2) Sacar");
-          System.out.println("  3) Depositar");
-          System.out.println("  4) Transferir");
-          System.out.println("  5) Sair");
-          System.out.println();
-          System.out.print("Entre com sua opção: ");
-
-          op = sc.nextInt();
-
-          if (op < 1 || op > 5) {
-            System.out.println("Opção inválida, escolha uma opção válida.");
-          }
-          
-          // processando a escolha
-          if (op == 1) {
-            
-            int conta;
-
-            // pega o indice da conta para imprimir o extrato
-            do {
-              System.out.printf("Entre com o número (1-%d) para a conta\nque "
-                                       + "o extrato será impresso: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              conta = sc.nextInt() - 1;
-              if (conta < 0 || conta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Número inválido, tente novamente.");
-              }else {
-                break;
-              }
-            } while (true);
-            
-            banco.mostrarExtrato(pessoaClienteAutenticada, conta);    
-            
-          } else if (op == 2) {
-
-            int deConta;
-            double quantia;
-            double saldoConta;
-
-            // pega o indice da conta para saque
-            do {
-              System.out.printf("Entre o número (1-%d) para selecionar a conta para "
-                                   + "o saque: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              deConta = sc.nextInt() - 1;
-              if (deConta < 0 || deConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
-              } else {
-                break;
-              }
-            } while (true);
-            
-            // retorna o saldo da conta selecionada para ver se tem fundos suficientes
-            saldoConta = pessoaClienteAutenticada.retornarSaldoContaEspecifica(deConta);
-
-            // pega a quantia para o saque
-            do {
-              System.out.printf("Entre com a quantia a ser sacada (máximo R$%.02f): R$ ", saldoConta);
-              quantia = sc.nextDouble();
-              if (quantia < 0) {
-                System.out.println("quantia deve ser maior que zero.");
-              } else if (quantia > saldoConta) {
-                System.out.printf("quantia não pode ser maior que o saldo "
-                                        + "de R$ %.02f.\n", saldoConta);
-              } else {
-                break;
-              }
-            } while (true);
-
-            banco.sacar(pessoaClienteAutenticada, deConta, quantia);
-            
-          } else if (op == 3) {
-
-            int paraConta;
-            double quantia;
-
-            // pega o indice da conta para deposito
-            do {
-              System.out.printf("Entre com o número (1-%d) para selecionar a conta para "
-                                     + "depósito: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              paraConta = sc.nextInt() - 1;
-              
-              if (paraConta < 0 || paraConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
-              
-              } else {
-                break;
-              }
-            } while (true);
-
-            // pega quantia para depositar
-            do {
-              System.out.printf("Entre com a quantia de depósito: R$ ");
-              quantia = sc.nextDouble();
-              
-              if (quantia < 0) {
-                System.out.println("quantia deve ser maior que zero.");
-              
-              } else {
-                break;
-              }
-            } while (true);
-
-            // realiza o deposito
-            banco.depositar(pessoaClienteAutenticada, paraConta, quantia);
-            
-          } else if (op == 4) {
-
-            int daConta;
-            int paraConta;
-            double quantia;
-            double saldoConta;
-
-            // pega o indice de uma conta retirar o valor da transferencia
-            do {
-              System.out.printf("Entre o número (1-%d) para "
-            	                      + "retirar o valor para transferência: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              daConta = sc.nextInt() - 1;
-              if (daConta < 0 || daConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
-              } else {
-                break;
-              }
-            } while (true);
-
-            // retorna o saldo da conta selecionada para ver se tem fundos suficientes
-            saldoConta = pessoaClienteAutenticada.retornarSaldoContaEspecifica(daConta);
-
-            // pega o indice da conta que vai receber o valor da transferencia
-            do {
-              System.out.printf("Entre o número (1-%d) para "
-                                     + "selecionar a conta que receberá a transferência: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              paraConta = sc.nextInt() - 1;
-              if (paraConta < 0 || paraConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
-              } else {
-                break;
-              }
-            } while (true);
-
-            // pega o valor para transferir
-            do {
-              /* pega a quantia para ser transferida de uma conta da pessoa cliente para outra
-               * levando em consideracao o saldo da conta que cedera o dinheiro
-               */
-              System.out.printf("Entre com a quantia para ser transferida (máximo R$%.02f): R$ ", saldoConta);
-              quantia = sc.nextDouble();
-              
-              if (quantia < 0) {
-                System.out.println("quantia deve ser maior que zero.");
-              
-              } else if (quantia > saldoConta) {
-                System.out.printf("quantia não pode ser maior que o valor do saldo "
-                                       + "de R$.02f.\n", saldoConta);
-              } else {
-                break;
-              }
-            } while (true);
-            
-            // envia as informacoes para o banco realizar a trasnferencia
-            banco.transferirFundos(pessoaClienteAutenticada, daConta, paraConta, quantia);
-            
-          } else if (op == 5) {
-            System.out.println("Logout realizado com sucesso!");
-            break;
-          }
-
-        } while (true);    
-
-      }// fim else
-      
-      
-    }// fim loop infinito
-  } 
-}
-```
-
-</details>
-
-
   <details>
-      <summary>Exemplo de uso </summary>
+      <summary>Exemplo de uso do Sistema</summary>
 
-  Considerando que tenha executado exatamente o código da classe `main` acima e interagido como se fôssemos a pessoa cliente Camaragibe Oliveira, teríamos a seguinte interação com o console:
+  Considerando que tenha executado exatamente o código da classe `main`, teríamos a seguinte interação com o console:
 
   ```text
   Nova pessoa cliente Alexiania Pereira com CPF: 842.074.410-77 criada!
@@ -638,13 +371,9 @@ public class CaixaEletronico {
 
   Entre com sua opção: 
   ```
-
   </details>
 
 </details>
-
-</details>
-
 
 </details>
 
@@ -653,11 +382,7 @@ public class CaixaEletronico {
 <details>
     <summary>Descrição</summary>
 
-Primeiramente, vamos implementar os testes, e todos irão falhar por enquanto.
-
-`TransacaoTest`: essa classe contém todos os testes relacionados aos métodos da classe `Transacao`.
-
-Na classe `TransacaoTest` crie os seguintes cenários de testes:
+Na classe `TransacaoTest` crie os seguintes cenários de teste:
 
 1. Testa o método construtor da classe Transação
     - Método `construtorTest`: verifica se o método construtor está inicializando os atributos corretamente.
@@ -668,14 +393,7 @@ Na classe `TransacaoTest` crie os seguintes cenários de testes:
 4. Testa o método instante está gerando o instante corretamente
     - Método `retornarInstanteTest`: verifica se o método `retornarInstante` retorna o momento correto em que a transação ocorreu, com data, hora, minuto e segundo.
 
-Esses cenários de testes serão os requisitos que nosso avaliador irá verificar.
-
-Após todos os testes implementados, eles irão falhar, agora é hora de criar um código que funcione e faça os testes passarem.
-
-Sua implementação deve ter cobertura de testes de 90%
-
 </details>
-
 
 ### 2. Criar testes unitários da classe `Conta` e `PessoaCliente`
 
@@ -724,11 +442,6 @@ Na classe `PessoaClienteTest` crie os seguintes cenários de testes:
 19. Testa o método Getter do atributo cpf está retornando
     - Método `getCpfTest`: avalia se o método `Getter` do atributo `cpf` da pessoa cliente está retornando o CPF cadastrado.
 
-Esses cenários de testes serão os requisitos que nosso avaliador irá verificar.
-
-Após todos os testes implementados, eles irão falhar, agora é hora de criar um código que funcione e faça os testes passarem.
-
-Sua implementação deve ter cobertura de testes de 90%
 </details>
 
 
@@ -736,10 +449,6 @@ Sua implementação deve ter cobertura de testes de 90%
 
 <details>
     <summary>Descrição</summary>
-
-Vamos implementar os testes, todos devem falhar por enquanto.
-
-- `BancoTest`: essa classe contém todos os testes relacionados aos métodos da classe `Banco` do nosso sistema de caixa eletrônico.
 
 Na classe `BancoTest` crie os seguintes cenários de testes:
 
@@ -753,12 +462,6 @@ Na classe `BancoTest` crie os seguintes cenários de testes:
    - Método `depositarTestTransferirFundosTestMostrarExtratoTest`: testa se o método `depositar` está adicionando ao saldo da conta bancária o valor que é passado como argumento, e `transferirFundos` está transferindo quantias em dinheiro entre as contas da pessoa cliente. Tanto o método `deposito` quanto o método `transferirFundos` não retornam valores, por isso usamos o método `mostrarExtrato` para imprimir no console e verificarmos sua impressão. Com isso, faz sentido que você utilize  os três em um método de teste único, pois para poder transferir valores de uma conta para outra, a conta que cederá o dinheiro deverá ter um saldo positivo.
 24. Testa se o método sacar está funcionando corretamente
    - Método `depositarTestSacarTestMostrarExtratoTest`: testa se o método `depositar` está adicionando ao saldo da conta bancária o valor que é passado como argumento, e o método `sacar` está realizando a subtração correta do saldo em conta bancária da quantia que é passada como argumento. Como o método `depositar` e o método `sacar` não retornam valores, você deve usar o método `mostrarExtrato` para imprimir no console e verificar sua impressão. Com isso, faz sentido testar os três em um método de teste só, pois para poder sacar valores de uma conta, ela deverá ter um saldo positivo.
-
-Esses cenários de testes serão os requisitos que nosso avaliador irá verificar.
-
-Após todos os testes implementados, eles irão falhar, agora é hora de criar um código que funcione e faça os testes passarem.
-
-Sua implementação deve ter cobertura de testes de 90%
 
 </details>
 
@@ -776,7 +479,7 @@ Sua implementação deve ter cobertura de testes de 90%
 <details>
 <summary><strong> 🗣 Nos dê feedbacks sobre o exercício!</strong></summary>
 
-Ao finalizar e submeter o exercício, não se esqueça de avaliar sua experiência preenchendo o [formulário](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_hidden=CH1&template=betrybe/java-0x-exercicio-caixa-eletronico).
+Ao finalizar e submeter o exercício, não se esqueça de avaliar sua experiência preenchendo o [formulário](https://be-trybe.typeform.com/to/ZTeR4IbH).
 **Leva menos de 3 minutos!**
 
 </details>
