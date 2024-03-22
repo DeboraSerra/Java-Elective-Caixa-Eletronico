@@ -1,6 +1,7 @@
 package com.trybe.acc.java.caixaeletronico;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Account.
@@ -53,6 +54,7 @@ public class Conta {
    * Retorna o resumo da conta em uma linha.
    */
   public String retornarResumoConta() {
+    Locale.setDefault(Locale.US);
 
     double saldo = this.retornarSaldo();
 
