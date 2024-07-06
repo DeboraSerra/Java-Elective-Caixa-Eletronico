@@ -33,7 +33,7 @@ class TransacaoTest {
   void retornarResumoTransacaoTest() {
     String expected =  " -------- teste: R$ 100,00 +";
     String result = transacao.retornarResumoTransacao();
-    assertTrue(result.contains(expected), "Transação não bate com o esperado");
+    assertTrue(result.contains(expected));
 
   }
 
@@ -42,7 +42,7 @@ class TransacaoTest {
   void retornarInstanteTest() {
     String result = transacao.retornarResumoTransacao();
     String expected = "^\\d{2}/\\d{2}/\\d{4} \\d{2}:\\d{2}:\\d{2} -------- teste: R\\$ 100,00 \\+$";
-    assertTrue(result.matches(expected), "Formato de data e hora incorreto");
+    assertTrue(result.matches(expected));
   }
 
 }
