@@ -33,7 +33,7 @@ class TransacaoTest {
   void retornarResumoTransacaoTest() {
     String expected =  " -------- teste: R$ 100,00 +";
     String result = transacao.retornarResumoTransacao();
-    assertTrue(result.contains(expected), "Transão não bate com o esperado");
+    assertTrue(result.contains(expected), "Transação não bate com o esperado");
 
   }
 
