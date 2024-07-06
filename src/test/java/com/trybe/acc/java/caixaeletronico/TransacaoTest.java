@@ -13,11 +13,12 @@ import org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.RegexCo
 @DisplayName("Testes dos métodos da classe Transação")
 class TransacaoTest {
 
-  Transacao transacao = new Transacao(100, "teste");
+
 
   @Test
   @DisplayName("1 - Testa o método construtor da classe Transação.")
   void construtorTest() {
+    Transacao transacao = new Transacao(100, "teste");
     assertEquals(100, transacao.getQuantia());
   }
 
@@ -25,13 +26,15 @@ class TransacaoTest {
   @Test
   @DisplayName("2 - Testa o método Getter do atributo quantia.")
   void getQuantiaTest() {
+    Transacao transacao = new Transacao(100, "teste");
     assertEquals(100, transacao.getQuantia());
   }
 
   @Test
   @DisplayName("3 - Testa o método retornar resumo transação.")
   void retornarResumoTransacaoTest() {
-    String expected =  " -------- teste: R$ 100,00 +";
+    Transacao transacao = new Transacao(100, "teste");
+    String expected =  " -------- teste: R$ 100.00 +";
     String result = transacao.retornarResumoTransacao();
     assertTrue(result.contains(expected));
 
@@ -40,8 +43,9 @@ class TransacaoTest {
   @Test
   @DisplayName("4 - Testa o método instante está gerando o instante corretamente.")
   void retornarInstanteTest() {
+    Transacao transacao = new Transacao(100, "teste");
     String result = transacao.retornarResumoTransacao();
-    String expected = "^\\d{2}/\\d{2}/\\d{4} \\d{2}:\\d{2}:\\d{2} -------- teste: R\\$ 100,00 \\+$";
+    String expected = "^\\d{2}/\\d{2}/\\d{4} \\d{2}:\\d{2}:\\d{2} -------- teste: R\\$ 100.00 \\+$";
     assertTrue(result.matches(expected));
   }
 
