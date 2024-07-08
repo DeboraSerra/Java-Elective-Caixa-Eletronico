@@ -2,13 +2,9 @@ package com.trybe.acc.java.caixaeletronico;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
-import java.time.LocalDateTime;
-import java.util.regex.Pattern;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.RegexConversion;
 
 @DisplayName("Testes dos métodos da classe Transação")
 class TransacaoTest {
